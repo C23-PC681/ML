@@ -1,0 +1,25 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Variabel dan parameter
+V = np.linspace(-2, 2, 100)  # Rentang tegangan
+I = []  # Daftar untuk menyimpan nilai arus
+
+# Parameter sambungan p-n
+Is = 1e-12  # Arus jenuh terbalik
+Vt = 0.025  # Tegangan termal
+
+# Menghitung arus pada setiap nilai tegangan
+for voltage in V:
+    if voltage >= 0:
+        I.append(Is * (np.exp(voltage / Vt) - 1))
+    else:
+        I.append(-Is * (np.exp(-voltage / Vt) - 1))
+
+# Plotting kurva I-V
+plt.plot(V, I)
+plt.xlabel('Tegangan (V)')
+plt.ylabel('Arus (A)')
+plt.title('Kurva I-V pada Sambungan p-n')
+plt.grid(True)
+plt.show()
