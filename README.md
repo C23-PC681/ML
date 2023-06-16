@@ -23,12 +23,11 @@ pip install -r requirements.txt
 4. Place your dataset in the repository directory. Ensure that it is in CSV format.
 
 5. Update the file path in the `workflow.py` script:
+6. Run the workflow.py script: 
 ```python
 # Membaca dataset
 dataset = pd.read_csv('path/to/your/dataset.csv')
-#
-
-6. #Run the workflow.py script:
+6.
 python workflow.py
 
 The script will perform the following steps:
